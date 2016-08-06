@@ -27,7 +27,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     category = models.ForeignKey(Category)
-    is_markdown = models.BooleanField(default=True)
+    is_markdown = models.BooleanField(default=False)
     markdown_text = models.TextField(default='default_text')
     tinymce_text = models.TextField(default='default_text')
 
