@@ -21,7 +21,7 @@ class Post(models.Model):
         verbose_name_plural = u'文章'
     author = models.ForeignKey(User)
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = models.TextField(default='default_text')
     #markdown_text = models.TextField()
     #markdown_pretext = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
@@ -29,7 +29,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category)
     is_markdown = models.BooleanField(default=False)
     markdown_text = models.TextField(default='default_text')
-    tinymce_text = models.TextField(default='default_text')
+    tinymce_text = models.TextField()
 
     def publish(self):
         self.published_date = timezone.now()
